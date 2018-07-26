@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//------------------------------------------------
+		//类数组（是对象又可以当做数组使用）
+		//------------------------------------------------
+		eg:arguments或者:
+		var obj = {
+			'0':'a',
+			'1':'b',
+			'length':2,
+			'push':Array.prototype.push，
+			'splice':Array.prototype.splice
+		}
+		console.log(obj[0]);
+		类数组： 1.属性必须要为索引（数字）属性
+		        2.必须要有length属性
+		        3.最好加上push方法
+		        4.最好有splice (使得obj更像数组)
+		Array.prototype.push = function (target){
+			obj[obj.length] = target;
+			obj.length ++;
+		}
+		//------------------------------------------------
+		//数组
+		//------------------------------------------------
+		1.改变原数组的方法：
+		   1）push()：向数组最后处添加元素;
+
+		   2) pop() : 在最后处删除；        -------类似于栈
+
+           3）unshift（x）：在数组第一位添加x；
+
+           4）reverse():将数组里的元素逆反顺序；
+
+           5）splice(从第几位开始position，截取几位或者说截取的长度length，切口处添加的新的数据data)；
+                position可以为负数：即指从右向左数第x位；
+                即由此实现：
+                splice =function（position）{
+                     position += position>0?0:this.length;
+                }
+              切片乃至切除再在切口处添加;可
+             
+           6)sort():排序（默认由小到大，但排的是ASCII码）
+                   重写方法：
+                      1.必须写两形参;
+                      2.返回值:当返回值为负数则前面的形参在前面
+                          当返回值为正数则后面的形参在前面
+                          当返回值为零则不变
+                    arr.sort( function（first,second）{
+                           return first - second ;
+                    });
+                    其first和second的传入类似于冒泡排序
+                    改变 减数和被减数的位置从而达到升序和逆序排列
+                    -------------------------------------
+                    乱序：
+                    arr.sort(function (){
+                    	 return Math.random()-0.5;
+                    });
+           
+		2.不改变原数组的方法：
+		   7.concat():拼接两个数组;arr.concat(arr1);但是拼接后对原数组arr和arr1内的元素都不改变；
+		       其结果需要 new arr2 = arr.concat(arr1);
+
+		   8.slice(从第几位开始截取，到第几位结束);
+               new arr3 = arr4.slice(start,end);
+             包含从start到end(不包括该元素)的arrayObject 中的元素
+        //-------------------------------------------
+        //  字符串
+        //-------------------------------------------
+           1. 可以用在string转数组：语句:str.split('');
+                  与之相对的是方法:    Array.join（'');以括号内的值为截取或粘合的介质；值若无则以逗号为值； 
+
+           2. stringObject.charAt(index); 返回指定位置的字符
+
+           3. str.charCodeAt(); 返回指定位置的字符的 Unicode 编码,返回值是 0 - 65535 之间的整数
+	</script>
+</body>
+</html>

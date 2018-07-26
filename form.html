@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Form表单</title>
+	</head>
+	<body>
+		<aside>ccc</aside>
+		<form action="#" method="post" enctype="multipart/form-data">
+			<!-- text--password -->
+			username:
+			<input type="text" name="username" id="username"/>
+			<br>
+
+			userpassword:
+            <input type="password" name="userpass" id="userpass">
+            <br>
+            <!-- ---------------------------- -->
+            <!-- radio -->
+             性别:<input type="radio" name="sex" value="male" id="male" checked="true">
+            <label for="male">male</label>
+
+            <input type="radio" name="sex" value="female" id="female">
+            <label for="female">female</label>
+            <br>
+            <!-- ---------------------------- -->
+            <!-- text->maxlength-size -->
+              电话号码:
+              <input type="text" name="phone" size="60" maxlength="11">
+            邮箱
+              <input type="text" name="mail" size="20">
+            <!-- ---------------------------- -->
+            <!-- select->option -->
+             城市:<select name="province" id="province" multiple="multiple" size="4">
+            	<option value="上海">
+            	   上海
+            	</option>
+            	<option value="北京">
+            	   北京
+                </option>
+            	<option value="江西">
+            	   江西
+                </option>
+            	<option value="江苏">
+            	   江苏
+                </option>
+            </select>
+            <br>
+            <select name="city" id="city">
+            	<optgroup label="江西">
+	            	<option value="南昌">
+	            	    南昌
+	                </option>
+	                <option value="南昌">
+	            	    九江
+	                </option>
+	                <option value="南昌">
+	            	    吉安
+	                </option>
+	            </optgroup>
+            </select>
+            <select name="city" id="city">
+            	<optgroup label="江苏">
+	            	<option value="苏州">
+	            	    苏州
+	                </option>
+	                <option value="南京">
+	            	    南京
+	                </option>
+	                <option value="徐州">
+	            	    徐州
+	                </option>
+                </optgroup>
+            </select>
+            <!-- ---------------------------- -->
+            <!-- checkbox -->
+            科目：<input type="checkbox" name="subject" value="html" id="html">
+            <label for="html">HTML</label>
+            <input type="checkbox" name="subject" value="PS" id="PS">
+            <label for="PS">PS</label>
+            <br>
+            <!-- ---------------------------- -->
+            <!-- file-image-hidden-reset-submit -->
+            <input type="file" name="photo" value="">
+            <input type="image" src='../images/3.jpg' alt="图片加载失败">
+            <br>
+            <input type="hidden" value="hidden" name="hidden">hidden
+            <input type="reset" value="reset">
+            <input type="submit" value="login" name="login" id="login">
+            <button name="button">
+            	button可提交
+            </button>
+            <button type="button" name="button">
+            	type->button不可提交
+            </button>
+            <button type="submit" name="button">
+            	type->submit可提交
+            </button>
+             <button type="reset" name="button">
+            	type->reset
+            </button>
+            <!-- -----------------------------
+            textarea 
+            -->
+            <textarea name="" id="" cols="30" rows="10" wrap="hard">
+            	请输入....
+            	wrap:是否换行->off关闭,hard硬换行（手动）,soft软换行且自动提交(不建议)
+            	readonly:只读
+            </textarea>
+		</form>
+		!important note:
+		<!-- 但凡要传输文件时form中必须写enctype="multipart/form-data"
+		共三种传输编码类型:
+		   application/x-www-form-urlencoded
+		   ---------------------
+		   multipart/form-data
+		   ---------------------
+		   text/plain -->
+		<!-- <br>
+		 --------------------------
+		get是从服务器上获取数据，post是向服务器传送数据
+		get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。但理论上，IIS4中最大量为80KB，IIS5中为100KB。
+		 --------------------------- -->
+		<!-- HTTP请求：GET与POST方法的区别:
+		GET方式提交的数据最多只能有1024字节，而POST则没有此限制
+		--------------------------------- -->
+		<!-- <br>
+	    在表单里使用”post”和”get”:
+		在Form里面，可以使用post也可以使用get。它们都是method的合法取值。但是，post和get方法在使用上至少有两点不同：
+		1、Get方法通过URL请求来传递用户的输入。Post方法通过另外的形式。
+		2、Get方式的提交你需要用Request.QueryString来取得变量的值，而Post方式提交时，你必须通过Request.Form来访问提交的内容。 -->
+		<!-- select->option
+		   select:
+		      name
+		      -----------------------
+		      multiple 是否可以多选（boolean）
+		          三种形式:
+		          multiple="multiple"
+                  multiple="true"
+                  multiple
+		      -----------------------
+		      disabled(boolean) 禁用
+		      -----------------------
+		      size 罗列出来显示的长度
+		    option:
+		       value  代表值 
+		    ---------------------------
+		   -->
+		<!-- label->for
+            label 标识当前控件 for指向控件的ID值   -->
+	</body>
+	</html>	
