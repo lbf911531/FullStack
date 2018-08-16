@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+   <script type="text/javascript">
+     // Father.prototype.lastName = "jo";
+     // function Father(){
+        
+     <!-- }	 -->
+     // var father = new Father(); Son.prototype = father;
+     // function Son(){
+
+     <!-- } -->
+   
+    // var son = new Son();
+    
+
+    //function object's name 大写 表示该函数为构造函数;prototype表示原型,绝大多数函数之间存在原型链,最终原型为object{}
+
+    //Son.prototype = Father.prototype ---两者指向同一原型
+
+    //以下为函数继承且改变子函数属性不影响父函数属性（于两者之间添加中间对象） 【圣杯模式】
+    function inherit(Target,Origin){
+       function F(){};
+       F.prototype = Orgin.prototype;
+       Target.prototype = new F();
+       //constuctor 构造器，返回值为生成该对象的那个函数,由于在此继承，导致constuctor指向紊乱，因此重新设置。
+       Target.prototype.constuctor = Target;
+    }
+    Father.prototype.nature = "shuxing"；
+    function Father(){
+
+    }
+    function Son(){
+    }
+    inherit(Son,Father);
+    var son = new Son();
+    var father = new Father();
+   </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>newFormElement</title>
+	<!-- <style>
+		progress{
+			height: 10px;
+			width:150px;
+		}
+	</style> -->
+</head>
+<body>
+	进度条: <br>	
+	<form action="#" method="post">
+		<progress value="0" max="100" id="pr">
+			
+		</progress>
+	</form>
+	<input type="button" value="start" id="btn">
+	<!-- --------------------------------------------------- -->
+	加减: <br>
+	<form action="#" method="get" oninput="result.value = parseInt(a.value) +parseInt(b.value)" id="forms">
+		<input type="text" id='f'name="a" value="2">+
+		<input type="text" id='s'name="b" value="3">=
+        <output name="result" for='f s'>5</output><br>
+        ---------------------------------------------<br>
+        <meter value="30" min='0' max='100' low='10' high='80' optimum="100"></meter>
+        <meter value="10" min='0' max='100' low='10' high='80' optimum="50"></meter><br>
+        meter:类似于电池的标签<br>
+             value 	<br>	
+             min    <br>
+             max    <br>
+             low    <br>
+             high   <br>
+             optimum<br>
+             其存在区间为:min  low  high  max<br>
+             当value与optimum处于同一区间时，显示绿色，相隔一个区间为黄色<br>
+             两个区间为红色<br>
+        ----------------------------------------------------
+        数据列表<br>
+        <input type="text" list="li" name="beautiful girl">
+        <datalist id="li" >
+        	<option value="zhaojun">昭君</option>
+        	<option value="yuhuan">玉环</option>
+        	<option value="xishi">西施</option>
+        	<option value="diaochan">貂蝉</option>
+        </datalist>
+        <select name="beautiful girl" id="sel">
+        	<option value="zhaojun">昭君</option>
+        	<option value="yuhuan">玉环</option>
+        	<option value="xishi">西施</option>
+        	<option value="diaochan">貂蝉</option>
+        </select>
+        <br>
+        datalist and select 区别: <br>
+            1.select 默认第一行option的值 <br>
+            2.datalist有默认搜索功能      <br>
+            3.datalist有记忆功能，可记忆几次最近输入的功能 <br>
+            4.datalist在选中后显示value值，select显示option中文本值<br>
+        ----------------------------------------------------
+	    date <br>
+	    <input type="date" name='date'>
+	    <input type="datetime-local" name='datetime-local'>
+	    <input type="time" name='time'>
+	    <input type="month" name='month'>
+	    <input type="week" name="week">
+	    <br>
+	    <!-- ---------------------------------------------------------- -->
+	    <input type="tel" name='teml' pattern="[0-9]" placeholder="请输入11位数字" required="true">
+	    <input type="email" name='email'>
+	    <input type="url" name='url'>
+	    <input type="color" name='color'>
+	    <input type="number" name='number'>
+	    <input type="range" name='range'> 
+	    <input type="seach" name="seach">
+	    <input type="submit" name="submit">
+	</form>
+	<textarea name="s" id="s" cols="30" rows="10" form='forms'></textarea>
+
+    <form action="#" id="myForm">
+        <input type=submit>
+    </form>
+    <input type="text" name="tel" form="myForm">
+
+   <!-- formaction用于提交按钮上，提交到不同的后台处理程序 -->
+   <form action="register.action">
+      <input type="text" name="username">
+      <input type="password" name="userpass">
+      <input type="email" name="mail">
+      <input type="image" src="../images/25.jpg" alt="图片加载失败" formaction="register1.action" formmethod="post" ormenctype="" formnovalidate="true" formtarget="blank">
+      <input type="submit" >
+      
+   </form>
+
+
+	<script>
+		window.onload=function(){
+            var obtn = document.getElementById('btn');
+            obtn.onclick = function(){
+            var op = document.getElementById('pr')
+             
+             setInterval(function(){
+                if(op.value<100){
+                     op.value++;
+                }
+                else op.value = 100; 
+            },50);
+              
+            }
+          // ---------------------------------------------------
+		}
+	</script>
+</body>
+</html>
