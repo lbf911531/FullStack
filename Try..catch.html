@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Try...Catch</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//----------------------------------------------
+		//try ...catch
+		//----------------------------------------------
+           在try里的代码如果存在出处代码，则不会执行try里面出错的及其之后的代码,try外面的程序不会终止
+           catch捕捉错误
+           try{
+               ............;
+           }catch(e){
+           	  console.log(e.name +':'+ e.message);
+           }
+           error：
+              1.EvalError: eval()的使用与定义不一；
+
+              2.RangeError：数值越界;
+              
+              3.ReferenceError:非法或不能识别的引用数值;
+                   1）没定义的东西被使用 
+                
+
+              4.SyntaxError:发生语法解析错误;
+                   1）出现中文字符
+
+              
+              5.TypeError:操作数类型错误;
+              
+              6.URLError:URL处理函数使用不当;
+	</script>
+</body>
+</html>
